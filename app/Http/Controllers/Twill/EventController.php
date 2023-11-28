@@ -34,7 +34,7 @@ class EventController extends BaseModuleController
         );
 
         $form->add(
-            DatePicker::make()->name('event_date')->label('Event Date')
+            DatePicker::make()->name('event_date')->label('Event Date')->time24h(true)
         );
 
         $form->add(

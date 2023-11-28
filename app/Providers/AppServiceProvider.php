@@ -24,5 +24,10 @@ class AppServiceProvider extends ServiceProvider
         TwillNavigation::addLink(
             NavigationLink::make()->forModule('events')->title('Events')
         );
+
+        view()->composer('components.language_switcher', function ($view) {
+            $view->with('current_locale', app()->getLocale());
+            $view->with('available_locales', config('app.available_locales'));
+        });
     }
 }

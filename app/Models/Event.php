@@ -15,21 +15,31 @@ class Event extends Model implements Sortable
 {
     use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasPosition;
 
+    protected $casts = [
+        'event_date' => 'datetime',
+    ];
     protected $fillable = [
         'published',
         'title',
         'description',
         'position',
+        'event_date',
+        'event_type',
+        'event_location',
+        'event_organizer',
     ];
-    
+
     public $translatedAttributes = [
         'title',
         'description',
+        'event_type',
+        'event_location',
+        'event_organizer',
         'active',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
 }
