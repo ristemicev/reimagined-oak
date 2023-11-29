@@ -43,7 +43,7 @@ Route::get('/rules', function () {
 
 
 //routes for news
-Route::get('/news', function () {
+Route::get('/events', function () {
     return view('pages.news.events');
 });
 
