@@ -1,0 +1,15 @@
+.header {
+    background-image: url('/assets/images/breadcrumbs.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Custom CSS to change breadcrumb divider color */
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "/";
+    color: #FFFFFF; /* Set your desired dark color here */
+}
+
+.header a {
+    text-decoration: none;
+}

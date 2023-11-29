@@ -1,5 +1,5 @@
 <!-- Page Header Start -->
-<div class="container-fluid bg-dark page-header py-5 {{ isset($bottom_margin) ? ($bottom_margin ? 'mb-5' : '') : 'mb-5' }}">
+<div class="header container-fluid bg-dark page-header py-5 {{ isset($bottom_margin) ? ($bottom_margin ? 'mb-5' : '') : 'mb-5' }}">
     <div class="container py-5">
         <h1 class="display-3 mb-3 text-white animated slideInDown">{{$title}}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
