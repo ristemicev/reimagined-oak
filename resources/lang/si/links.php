@@ -11,7 +11,7 @@ return [
 
     'news' => 'Novice',
     'events' => 'Dogodki',
-    'school' => 'Šola',
+    'school' => 'Alpinistična Šola',
 
     'reports' => 'Poročila',
 

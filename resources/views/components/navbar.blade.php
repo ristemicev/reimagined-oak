@@ -10,8 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('links.about') }}
                     </a>
                     <ul class="dropdown-menu">
@@ -22,8 +21,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('links.news') }}
                     </a>
                     <ul class="dropdown-menu">
@@ -33,6 +31,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/reports">{{__('links.reports')}}</a>
+                </li>
+                <li class="nav-item">
+                    @include('components.language_switcher')
                 </li>
             </ul>
         </div>
