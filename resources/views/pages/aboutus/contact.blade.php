@@ -2,5 +2,5 @@
 
 @section('content')
 
-    @include('components.breadcrumbs', ['title' => __('links.contact')])
+    @include('components.breadcrumbs', ['previous' => __('links.about'),'title' => __('links.contact')])
 @endsection

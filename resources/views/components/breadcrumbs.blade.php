@@ -4,7 +4,9 @@
         <h1 class="display-3 mb-3 text-white animated slideInDown">{{$title}}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-white" href="{{asset('/')}}">{{__('links.home')}}</a></li>
+                @if(isset($previous))
+                    <li class="breadcrumb-item"><a class="text-white" href="{{asset('/')}}">{{$previous}}</a></li>
+                @endif
                 @if(isset($subtitle) && isset($subtitle_url))
                     <li class="breadcrumb-item"><a class="text-white" href="{{$subtitle_url}}">{{$subtitle}}</a></li>
                 @endif
