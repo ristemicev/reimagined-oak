@@ -30,7 +30,7 @@ class EventController extends BaseModuleController
         $form = parent::getForm($model);
 
         $form->add(
-            Input::make()->name('title')->label('Title')->translatable()
+            Input::make()->name('title')->label('Title')
         );
 
         $form->add(
@@ -38,19 +38,19 @@ class EventController extends BaseModuleController
         );
 
         $form->add(
-            Wysiwyg::make()->name('description')->label('Description')->translatable()
+            Wysiwyg::make()->name('description')->label('Description')
         );
 
         $form->add(
-            Input::make()->name('event_type')->label('Event Type')->translatable()
+            Input::make()->name('event_type')->label('Event Type')
         );
 
         $form->add(
-            Input::make()->name('event_location')->label('Event Location')->translatable()
+            Input::make()->name('event_location')->label('Event Location')
         );
 
         $form->add(
-            Input::make()->name('event_organizer')->label('Event Organizer')->translatable()
+            Input::make()->name('event_organizer')->label('Event Organizer')
         );
 
         return $form;

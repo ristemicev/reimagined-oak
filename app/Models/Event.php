@@ -30,12 +30,6 @@ class Event extends Model implements Sortable
     ];
 
     public $translatedAttributes = [
-        'title',
-        'description',
-        'event_type',
-        'event_location',
-        'event_organizer',
-        'active',
     ];
 
     public $slugAttributes = [

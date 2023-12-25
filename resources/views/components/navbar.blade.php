@@ -9,7 +9,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown px-1">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('links.about') }}
                     </a>
@@ -20,7 +20,7 @@
                         <li><a class="dropdown-item" href="/rules">{{ __('links.rules') }}</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown px-1">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('links.news') }}
                     </a>
@@ -29,10 +29,10 @@
                         <li><a class="dropdown-item" href="/school">{{ __('links.school') }}</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-1">
                     <a class="nav-link" href="/reports">{{__('links.reports')}}</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-1">
                     @include('components.language_switcher')
                 </li>
             </ul>

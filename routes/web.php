@@ -41,23 +41,26 @@ Route::get('/rules', function () {
     return view('pages.aboutus.rules');
 });
 
-
-//routes for news
-Route::get('/events', function () {
-    return view('pages.news.events');
-});
-
 Route::get('/school', function () {
     return view('pages.news.school');
 });
 
+Route::prefix('events')->group(function () {
+
+    Route::get('language/{locale}', function ($locale) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->back();
+    });
+
+    Route::get('/', [EventController::class,'index']);
+    Route::get('/{id}', [EventController::class,'show'])->name('event.show');
+
+});
 
 //routes for reports
 Route::get('/reports', function () {
     return view('pages.reports');
 });
 
-
-
-//route for events/{slug}
-Route::get('/events/{slug}', [EventController::class,'show']);
+Route::get('/testMail',[\App\Http\Controllers\Controller::class,'testMail']);

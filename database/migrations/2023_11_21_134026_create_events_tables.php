@@ -14,6 +14,11 @@ class CreateEventsTables extends Migration
 
             $table->integer('position')->unsigned()->nullable();
             $table->dateTime('event_date')->nullable();
+            $table->string('title', 200)->nullable();
+            $table->text('description')->nullable();
+            $table->string('event_type', 200)->nullable();
+            $table->string('event_location', 200)->nullable();
+            $table->string('event_organizer', 200)->nullable();
 
             // add those 2 columns to enable publication timeframe fields (you can use publish_start_date only if you don't need to provide the ability to specify an end date)
             // $table->timestamp('publish_start_date')->nullable();
@@ -22,11 +27,6 @@ class CreateEventsTables extends Migration
 
         Schema::create('event_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'event');
-            $table->string('title', 200)->nullable();
-            $table->text('description')->nullable();
-            $table->string('event_type', 200)->nullable();
-            $table->string('event_location', 200)->nullable();
-            $table->string('event_organizer', 200)->nullable();
         });
 
         Schema::create('event_slugs', function (Blueprint $table) {

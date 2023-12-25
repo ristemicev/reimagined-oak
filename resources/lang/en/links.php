@@ -15,4 +15,6 @@ return [
 
     'reports' => 'Reports',
 
+    'see_more' => 'See More',
+
 ];

@@ -15,4 +15,6 @@ return [
 
     'reports' => 'Poročila',
 
+    'see_more' => 'Več',
+
 ];
