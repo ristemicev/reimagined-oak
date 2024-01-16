@@ -6,9 +6,24 @@
 
 <div class="container">
     {!! $report->renderBlocks() !!}
+
+    @auth
     <div class="row">
         // TODO: Comments add
+
+        {{-- @foreach ($report->comments as $comment)
+
+        @endforeach --}}
     </div>
+    @endauth
+
+
+    @can('reporter')
+    <div class="row">
+        // TODO:
+    </div>
+    @endcan
+
 </div>
 
 <style>
