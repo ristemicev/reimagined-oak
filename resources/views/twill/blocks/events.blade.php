@@ -1,0 +1,2 @@
+@twillBlockTitle('Events')
+@twillBlockIcon('text')

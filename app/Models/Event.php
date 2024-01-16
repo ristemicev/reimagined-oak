@@ -29,11 +29,36 @@ class Event extends Model implements Sortable
         'event_organizer',
     ];
 
-    public $translatedAttributes = [
-    ];
+    public $translatedAttributes = [];
 
     public $slugAttributes = [
         'title',
     ];
 
+    public $mediasParams = [
+        'event' => [ // role name
+            'default' => [ // crop name
+                [
+                    'name' => 'default', // ratio name, same as crop name if single
+                    'ratio' => 8 / 8, // ratio as a fraction or number
+                ],
+            ],
+            'single_event' => [ // crop name
+                [
+                    'name' => 'default', // ratio name, same as crop name if single
+                    'ratio' => 16 / 8, // ratio as a fraction or number
+                ],
+            ],
+            'mobile' => [
+                [
+                    'name' => 'landscape', // ratio name, multiple allowed
+                    'ratio' => 16 / 9,
+                ],
+                [
+                    'name' => 'portrait', // ratio name, multiple allowed
+                    'ratio' => 3 / 4,
+                ],
+            ],
+        ],
+    ];
 }

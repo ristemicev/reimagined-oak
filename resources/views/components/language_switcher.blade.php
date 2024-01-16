@@ -13,12 +13,12 @@
 <div class="dropdown">
     <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         <!-- {{ $current_locale }} -->
-        <i class="fi fi-{{ $current_locale == 'en' ? 'gb' : $current_locale}} fis"></i>
+        <i class="fi fi-{{ $current_locale == 'en' ? 'gb' : ($current_locale == 'sl' ? 'si' : '')}} fis"></i>
     </button>
     <div class="dropdown-menu" style="min-width:40px;" aria-labelledby="languageDropdown">
         @foreach($available_locales as $locale_name => $available_locale)
-        <a class="dropdown-item" href="language/{{ $available_locale }}">
-            <i class="fi fi-{{ $available_locale == 'en' ? 'gb' : $available_locale}} fis"></i>
+        <a class="dropdown-item" href={{ route('language', $available_locale) }}>
+            <i class="fi fi-{{ $available_locale == 'en' ? 'gb' : ($available_locale == 'sl' ? 'si' : '')}} fis"></i>
         </a>
         @endforeach
     </div>

@@ -10,6 +10,7 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
+use A17\Twill\Services\Forms\Fields\Medias;
 
 class EventController extends BaseModuleController
 {
@@ -19,6 +20,7 @@ class EventController extends BaseModuleController
      */
     protected function setUpController(): void
     {
+        $this->disablePermalink(true);
     }
 
     /**
@@ -31,6 +33,10 @@ class EventController extends BaseModuleController
 
         $form->add(
             Input::make()->name('title')->label('Title')
+        );
+
+        $form->add(
+            Medias::make()->name('event')->label('Image')
         );
 
         $form->add(

@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ReportController;
+use App\Models\Page;
+use App\Repositories\EventRepository;
+use App\Repositories\HomepageRepository;
+use App\Repositories\PageRepository;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,35 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
     return redirect()->back();
-});
+})->name('language');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//routes for about us
-Route::get('/about', function () {
-    return view('pages.aboutus.theclub');
-});
-
-Route::get('/contact', function () {
-    return view('pages.aboutus.contact');
-});
-
-Route::get('/members', function () {
-    return view('pages.aboutus.members');
-});
-
-Route::get('/rules', function () {
-    return view('pages.aboutus.rules');
-});
-
-Route::get('/school', function () {
-    return view('pages.news.school');
+Route::get('/', function (EventRepository $eventRepository, HomepageRepository $homepageRepository) {
+    $events = $eventRepository->get();
+    $data = $homepageRepository->first();
+    return view('welcome', ['events' => $events, 'data' => $data]);
 });
 
 Route::prefix('events')->group(function () {
@@ -58,9 +46,15 @@ Route::prefix('events')->group(function () {
 
 });
 
-//routes for reports
-Route::get('/reports', function () {
-    return view('pages.reports');
+Route::get('/members', function () {
+    return view('pages.about.members');
 });
 
-Route::get('/testMail',[\App\Http\Controllers\Controller::class,'testMail']);
+//routes for reports
+Route::get('/reports', [ReportController::class, 'index']);
+Route::get('/reports/{id}', [ReportController::class, 'show'])->name('report');
+
+Route::get('{slug}', [PageController::class, 'show'])->where('slug', '.*')->name('pages');
+//routes for about us
+
+

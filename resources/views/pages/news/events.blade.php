@@ -8,7 +8,7 @@
         <div class="row">
             @foreach($events as $event)
                 <div class="col d-flex justify-content-center p-4">
-                    @include('components.card', ['title' => $event->title, 'eventId' => $event->id])
+                    @include('components.card', [ 'data' => $event ])
                 </div>
             @endforeach
         </div>
